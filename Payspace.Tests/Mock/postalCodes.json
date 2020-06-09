@@ -1,0 +1,18 @@
+﻿[
+  {
+    "code": "7441",
+    "taxType": "Progressive"
+  },
+  {
+    "code": "A100",
+    "taxType": "FlatValue"
+  },
+  {
+    "code": "7000",
+    "taxType": "FlatRate"
+  },
+  {
+    "code": "1000",
+    "taxType": "Progressive"
+  }
+]

@@ -1,0 +1,14 @@
+﻿[
+  {
+    "Id": 1,
+    "RoleName": "ACCESS"
+  },
+  {
+    "Id": 2,
+    "RoleName": "ADMIN"
+  },
+  {
+    "Id": 3,
+    "RoleName": "SYSTEM"
+  }
+]

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Payspace.UI.Models.DTO.TaxCalculationEvent>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    UserId
+                </th>
+                <th>
+                    PostalCode
+                </th>
+                <th>
+                    Taxable Amount
+                </th>
+                <th>
+                    Tax Type
+                </th>
+                <th>
+                    Assessed Amount
+                </th>             
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostalCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaxableAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaxRegime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AssessedAmount)
+                </td>       
+             
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

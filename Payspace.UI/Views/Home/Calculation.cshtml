@@ -1,0 +1,42 @@
+﻿@model Payspace.UI.Models.DTO.TaxCalculationRequest
+@{
+    ViewData["Title"] = "Calculation";
+}
+
+<h1>Tax Calculator</h1>
+
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <div class="alert alert-success" role="alert">
+        @ViewBag.Message
+    </div>
+}
+
+<form method="post" class="box-shadow" asp-action="ProcessCalculation" asp-antiforgery="true">
+    <div class="form-group row">
+        <label asp-for="PostalCode" class="col-sm-2 col-form-label"></label>
+        <div class="col">
+            <input class="form-control" asp-for="PostalCode" placeholder="Postal Code" required>
+            <span asp-validation-for="PostalCode" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="TaxableAmount" class="col-sm-2 col-form-label">Taxable Amount</label>
+        <div class="col">
+            <input class="form-control" asp-for="TaxableAmount" placeholder="Gross Taxable Amount" required>
+            <span asp-validation-for="TaxableAmount" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col">
+            <button type="submit" class="btn btn-primary float-right">Calculate</button>
+        </div>
+    </div>
+
+</form>
+
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

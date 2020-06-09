@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Payspace.Domain\Payspace.Domain.csproj" />
+    <ProjectReference Include="..\Payspace.Exceptions\Payspace.Exceptions.csproj" />
+  </ItemGroup>
+
+</Project>

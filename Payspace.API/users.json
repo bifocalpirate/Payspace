@@ -1,0 +1,17 @@
+﻿[
+  {
+    "Id": 1,
+    "EmailAddress": "plato@test.com",
+    "PasswordHash": "password"
+  },
+  {
+    "Id": 2,
+    "EmailAddress": "zizek@test.com",
+    "PasswordHash": "password"
+  },
+  {
+    "Id": 3,
+    "EmailAddress": "lacan@test.com",
+    "PasswordHash": "password"
+  }
+]

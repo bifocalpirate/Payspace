@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Payspace.Domain.ProgressiveTaxRate>
+
+
+<div class="alert alert-warning" role="alert">
+    <ul>
+        <li>Inputs are not validated on the UI, but invalid data won't be saved.</li>
+        <li>
+            Edits to the tax table are not validated for consistency. Gaps, overlaps and duplicates are not checked.
+        </li>
+    </ul>
+</div>
+
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Message
+    </div>
+}
+
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    From
+                </th>
+                <th>
+                    To
+                </th>
+                <th>
+                    Rate
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if (User.IsInRole("ADMIN") || User.IsInRole("SYSTEM"))
+                {
+                    @using (@Html.BeginForm("UpdateTaxRate", "Home", new { @item.Id }))
+                    {
+                        @Html.Hidden("Id", item.Id);
+                        <tr>
+                            <td>
+                                @Html.EditorFor(modelItem => item.From, null, "From")
+                            </td>
+                            <td>
+                                @Html.EditorFor(modelItem => item.To, null, "To")
+                            </td>
+                            <td>
+                                @Html.EditorFor(modelItem => item.Rate, null, "Rate")
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                @Html.ActionLink("Delete", "DeleteProgressiveTaxRate", "Home", new { id = item.Id }, new { @class = "btn btn-danger" })
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.From, null, "From")
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.To, null, "To")
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Rate, null, "Rate")
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                    
+                }
+
+            }
+            @if (User.IsInRole("ADMIN") || User.IsInRole("SUPER"))
+            {
+                @using (@Html.BeginForm("AddTaxRate", "Home"))
+                {
+                    @Html.Hidden("Id");
+                    <tr>
+                        <td>
+                            @Html.Editor("From")
+                        </td>
+                        <td>
+                            @Html.Editor("To")
+                        </td>
+                        <td>
+                            @Html.Editor("Rate")
+                        </td>
+                        <td>
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</div>
