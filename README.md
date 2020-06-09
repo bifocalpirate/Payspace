@@ -14,5 +14,6 @@ Payspace interview assessment
 - There are probably some places data could be cached such as the tax table.
 - The default page will list valid logins but you don't need to log in to perform tax calculations. 
 - Logging is only needed to demonstrate security and if you want to tag a tax calculation to a logged in user.
+- You'll also need to log in to view the tax calculation logs. Only use `lacan@test.com` has this view permission.
 
 
