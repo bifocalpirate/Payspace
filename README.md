@@ -9,6 +9,7 @@ Payspace interview assessment
 
 ## Key notes
 - This application is written with SOLID, TDD, DDD and Onion Architecture. 
+- The reason there are so many projects is that some artefacts would fit into a nuget package. Using this pattern you can increase build speed, and lock down changes to key classes and also marry a project to a version of a package.
 - It's a true REST solution in that the UI is only responsible for the presentational layer. All logic, calculations, final security validation and so on are performed by the seperate API project which can has more functionality than the UI itself.
 - You can do everything using Postman or such REST client as the UI does and more. To `log in` to the API generate a JWT token and use that token in protected methods.
 - There are probably some places data could be cached such as the tax table.
