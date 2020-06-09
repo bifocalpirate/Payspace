@@ -3,7 +3,7 @@ Payspace interview assessment
 
 ## Setup
 - Just clone the repo, load the solution file in `VS Code` or `Visual Studio 2019` (should work with earlier versions too).
-- Press F5 to get running.
+- **Right-click the Solution file, select Properties then click Multiple startup projects. Now select Payspace.API and Payspace.UI.**
 - When you press F5, it should start both the UI and API projects. If the API runs on a different port, you'll need to update the `appsettings.json` file appropriately pointing it to the correct address.
 - The database will be a Sqllite file called `payspace.db`, and it will automatically by seeded by the contents of a series of `.json` files included in the solution.
 
