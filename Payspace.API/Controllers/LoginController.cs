@@ -12,7 +12,6 @@ using Microsoft.IdentityModel.Tokens;
 using Payspace.API.Models;
 using Payspace.API.Models.DTO;
 using Payspace.Domain.Configuration;
-using Payspace.Domain.Security;
 
 namespace Payspace.API.Controllers
 {

@@ -2,12 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Payspace.Domain;
 using System.IO;
 using Newtonsoft.Json;
 using Payspace.Domain.Security;
-using Microsoft.AspNetCore.Identity;
 using Payspace.Utilities;
 
 namespace Payspace.API.Models

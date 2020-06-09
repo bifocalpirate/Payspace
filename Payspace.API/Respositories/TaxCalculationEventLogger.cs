@@ -1,11 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Payspace.API.Models;
+﻿using Payspace.API.Models;
 using Payspace.Domain;
 using Payspace.Domain.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Payspace.API.Respositories
 {
@@ -18,7 +13,7 @@ namespace Payspace.API.Respositories
 
     //also note we can inject a different version of this interface into the 
     //container and write these events elsewhere without changing much.
-    
+
     public class TaxCalculationEventLogger : ITaxCalculationEventLogger
     {
         private readonly AppDbContext _dbContext;
