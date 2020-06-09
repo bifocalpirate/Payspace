@@ -70,10 +70,10 @@ namespace Payspace.UI.Facades
             var result = _messager.Post<ProgressiveTaxRate, string>(GetRemoteUrl("ProgressiveTaxRate"), taxRate, _jwtToken).Result;
         }
         protected string GetRemoteUrl(string url, params string[] parameters)
-        {
-            var p = string.Join("/", parameters);
+        {            
             if (parameters.Any())
             {
+                var p = string.Join("/", parameters);
                 return $"{_settings.Value.APIUrl}/{url}/{p}";
             }
             return $"{_settings.Value.APIUrl}/{url}";
