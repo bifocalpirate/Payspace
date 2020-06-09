@@ -14,7 +14,7 @@ Payspace interview assessment
 - You can do everything using Postman or such REST client as the UI does and more. To `log in` to the API generate a JWT token and use that token in protected methods. You must generate the sha256 hash of any password as the API only knows your hashed password.
 - There are probably some places data could be cached such as the tax table.
 - The default page will list valid logins but you don't need to log in to perform tax calculations. 
-- Logging is only needed to demonstrate security and if you want to tag a tax calculation to a logged in user.
+- Logging in is only needed to demonstrate security and if you want to tag a tax calculation to a logged in user.
 - You'll also need to log in to view the tax calculation logs. Only user `lacan@test.com` has this view permission.
 
 
