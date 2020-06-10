@@ -50,9 +50,11 @@ namespace Payspace.Tests
         {
             Assert.AreEqual(6187.10M, _calculator.GetTaxableAmount(40000));
         }
+        [Test]
 
-        //any further tests really either test the validity of the tax table (overlaps, gaps)
-        //and the theory of numbers itself. i would add more tax table tests especially
-        //around what happens with edge cases.
+        public void When_Taxable_Is_1000000()
+        {
+            Assert.AreEqual(327682.14M, _calculator.GetTaxableAmount(1000000));
+        }    
     }
 }

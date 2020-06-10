@@ -46,9 +46,9 @@ namespace Payspace.Calculations
                 return 0M;
             }
             foreach(var taxRate in applicableSchedule)
-            { 
+            {
                 //catch the edge case where the salary is falls right on the From of the bracket.
-                var taxing = Math.Min(taxableAmount, taxRate.To ?? taxableAmount) -
+                var taxing = Math.Min(taxableAmount, taxRate.To == 0 ? taxableAmount : taxRate.To) -
                                        taxRate.From + (taxRate.From == taxableAmount?1:0);
                 runningTotalForTax += (taxing) * taxRate.Rate;
             }
