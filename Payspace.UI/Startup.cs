@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -58,6 +59,14 @@ namespace PayspaceDemo.UI
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            var appSettings = app.ApplicationServices.GetService<IOptions<AppSettings>>().Value;
+
+            CultureInfo.CurrentCulture = new CultureInfo(appSettings.CultureCode);
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture(appSettings.CultureCode)
+            });
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

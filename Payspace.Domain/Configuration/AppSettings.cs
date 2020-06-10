@@ -14,6 +14,7 @@ namespace Payspace.Domain.Configuration
         public decimal FlatRateRate { get; set; }
         public decimal FlatValue { get; set; }
         public decimal FlatValueTrigger { get; set; }
-        public decimal FlatValuePercentage { get; set; }    
+        public decimal FlatValuePercentage { get; set; }
+        public string CultureCode { get; set; } = "en-US";
     }
 }
